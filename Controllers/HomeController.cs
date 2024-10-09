@@ -15,24 +15,35 @@ namespace MVCBasics.Controllers
 
         public IActionResult Index()
         {
-            string timeNow = DateTime.Now.ToString();
-            ViewBag.TimeNow = timeNow;
-            ViewBag.Name = "Raj";
-            ViewBag.Rank = 1;
+            #region Draft1
+            //string timeNow = DateTime.Now.ToString();
+            //ViewBag.TimeNow = timeNow;
+            //ViewBag.Name = "Raj";
+            //ViewBag.Rank = 1;
 
-            ViewBag.GroupData = new { RollNo=1, Name="Raja" };
+            //ViewBag.GroupData = new { RollNo=1, Name="Raja" };
 
-            List<string> list = new List<string>();
-            list.Add("A");
-            list.Add("B");
-            list.Add("C");
-            list.Add("D");
+            //List<string> list = new List<string>();
+            //list.Add("A");
+            //list.Add("B");
+            //list.Add("C");
+            //list.Add("D");
 
-            ViewBag.Rank = 2;
+            //ViewBag.Rank = 2;
 
-            ViewBag.List = list;
+            //ViewBag.List = list;
+            #endregion
 
-            return View();
+            ViewData.Add("Name", "Experts");
+            Employee employee = new Employee() 
+            {
+                Id= 1,
+                Name="Ram",
+                Salary =100000,
+                Address = "Test address"
+            };
+
+            return View("EmployeeView", employee);
         }
 
         public IActionResult Privacy()

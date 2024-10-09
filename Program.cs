@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using MVCBasics.Model;
+using MVCBasics.Models;
+
 namespace MVCBasics
 {
     public class Program
@@ -8,7 +12,8 @@ namespace MVCBasics
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddDbContext<EmpDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

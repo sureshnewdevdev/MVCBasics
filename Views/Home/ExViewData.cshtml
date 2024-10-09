@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    int x = 100;
+}
+
+<div class="text-center">
+     <p>View data example is lined up</p>
+     @foreach (var item in ViewData.Values)
+    {
+        <h1>@item </h1>
+
+    }
+</div>
